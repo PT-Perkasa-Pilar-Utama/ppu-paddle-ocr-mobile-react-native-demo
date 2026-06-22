@@ -1,0 +1,27 @@
+{
+  "name": "ppu-paddle-ocr-mobile-react-native-demo",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "private": true,
+  "scripts": {
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "prebuild": "expo prebuild"
+  },
+  "dependencies": {
+    "@shopify/react-native-skia": "2.6.2",
+    "expo": "~56.0.4",
+    "expo-asset": "~56.0.14",
+    "expo-status-bar": "~56.0.4",
+    "onnxruntime-react-native": "^1.24.3",
+    "ppu-paddle-ocr": "^6.0.0",
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "react-native-reanimated": "4.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.2",
+    "typescript": "~6.0.3"
+  }
+}

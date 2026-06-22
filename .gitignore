@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Expo / native build output
+.expo/
+dist/
+web-build/
+android/
+ios/
+
+# Metro / debug
+*.log
+.DS_Store

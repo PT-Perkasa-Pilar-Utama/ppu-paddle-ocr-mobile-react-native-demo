@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "ppu-paddle-ocr demo",
+    "slug": "ppu-paddle-ocr-mobile-react-native-demo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ppupaddleocr.demo"
+    },
+    "android": {
+      "package": "com.ppupaddleocr.demo",
+      "predictiveBackGestureEnabled": false
+    }
+  }
+}
