@@ -2,12 +2,12 @@ import React from "react";
 import {
   ActivityIndicator,
   Pressable,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
   View,
 } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 
 import { useOcr } from "./src/hooks/useOcr";
@@ -29,32 +29,34 @@ export default function App(): React.JSX.Element {
   const busy = status === "initializing" || status === "running";
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="light" />
-      <Header />
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <StatusBar style="light" />
+        <Header />
 
-      <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
-        <ReceiptPreview />
+        <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+          <ReceiptPreview />
 
-        <Pressable
-          style={[styles.button, busy && styles.buttonDisabled]}
-          onPress={runOcr}
-          disabled={busy}
-        >
-          {busy ? (
-            <ActivityIndicator color="#0b0f19" />
-          ) : (
-            <Text style={styles.buttonText}>Run OCR</Text>
-          )}
-        </Pressable>
+          <Pressable
+            style={[styles.button, busy && styles.buttonDisabled]}
+            onPress={runOcr}
+            disabled={busy}
+          >
+            {busy ? (
+              <ActivityIndicator color="#0b0f19" />
+            ) : (
+              <Text style={styles.buttonText}>Run OCR</Text>
+            )}
+          </Pressable>
 
-        <Text style={styles.status}>Status: {STATUS_LABEL[status] ?? status}</Text>
+          <Text style={styles.status}>Status: {STATUS_LABEL[status] ?? status}</Text>
 
-        {error ? <Text style={styles.error}>{error}</Text> : null}
+          {error ? <Text style={styles.error}>{error}</Text> : null}
 
-        <ResultCard result={result} />
-      </ScrollView>
-    </SafeAreaView>
+          <ResultCard result={result} />
+        </ScrollView>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
