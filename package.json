@@ -13,6 +13,8 @@
     "@shopify/react-native-skia": "2.6.2",
     "expo": "~56.0.4",
     "expo-asset": "~56.0.14",
+    "expo-clipboard": "~56.0.4",
+    "expo-image-picker": "~56.0.18",
     "expo-status-bar": "~56.0.4",
     "expo-system-ui": "~56.0.5",
     "onnxruntime-react-native": "^1.24.3",

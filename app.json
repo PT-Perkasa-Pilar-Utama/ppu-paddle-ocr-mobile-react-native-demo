@@ -13,6 +13,15 @@
     "android": {
       "package": "com.ppupaddleocr.demo",
       "predictiveBackGestureEnabled": false
-    }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to pick an image to run OCR on.",
+          "cameraPermission": "Allow $(PRODUCT_NAME) to take a photo to run OCR on."
+        }
+      ]
+    ]
   }
 }
