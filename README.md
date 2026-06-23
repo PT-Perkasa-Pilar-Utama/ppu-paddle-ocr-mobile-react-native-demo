@@ -1,9 +1,15 @@
 # ppu-paddle-ocr — React Native demo
 
-A minimal [Expo](https://expo.dev) app that runs the `ppu-paddle-ocr/mobile` OCR
-pipeline on-device (iOS / Android). It loads a bundled receipt, recognizes the
-text with the default PP-OCRv6 small models, and shows the result, confidence,
-and timing.
+An [Expo](https://expo.dev) app that runs the `ppu-paddle-ocr/mobile` OCR
+pipeline fully on-device (iOS / Android). Pick an image — the bundled receipt,
+one from the photo library, or a fresh camera capture — choose a model preset,
+and recognize the text. The result (text, confidence, timing) can be copied as
+JSON, and a live process log mirrors the recognition pipeline.
+
+<p align="center">
+  <img src="demo.png" width="300"
+       alt="ppu-paddle-ocr React Native demo running on Android" />
+</p>
 
 ## Requirements
 
@@ -67,14 +73,16 @@ console.log(result.text, result.confidence);
 await service.destroy();
 ```
 
-- `src/hooks/useOcr.ts` — owns the service lifecycle (init on mount, recognize on
-  demand) and reads the bundled asset as an `ArrayBuffer`.
-- `App.tsx` — wires the preview, the Run button, and the result card.
-
-To OCR a live capture instead of the bundled image, pass a frame from
-[`expo-camera`](https://docs.expo.dev/versions/latest/sdk/camera/) or
-[`react-native-vision-camera`](https://github.com/mrousavy/react-native-vision-camera)
-as an `ArrayBuffer` to `recognize()`.
+- `src/hooks/useOcr.ts` — owns the service lifecycle and rebuilds it when the
+  selected model preset changes; recognition runs on caller-supplied bytes.
+- `src/hooks/useImageSource.ts` — resolves the bundled receipt, a library pick,
+  or a camera capture (`expo-image-picker`) to an `ArrayBuffer`.
+- `src/ocr/presets.ts` — the curated subset of the built-in model catalogue
+  shown in the preset selector.
+- `src/logging/logStore.ts` — mirrors `console` (including the library's
+  `verbose` pipeline logs) into the on-screen Process log.
+- `App.tsx` / `src/components/*` — source selector, model selector, preview,
+  Run button, result card (with Copy JSON), and the log panel.
 
 ## Notes
 
