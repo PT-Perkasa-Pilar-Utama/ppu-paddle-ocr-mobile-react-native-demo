@@ -13,7 +13,7 @@
         "expo-status-bar": "~56.0.4",
         "expo-system-ui": "~56.0.5",
         "onnxruntime-react-native": "^1.24.3",
-        "ppu-paddle-ocr": "^6.1.1",
+        "ppu-paddle-ocr": "^6.2.0",
         "react": "19.2.3",
         "react-native": "0.85.3",
         "react-native-reanimated": "4.3.1",
@@ -926,7 +926,7 @@
 
     "ppu-ocv": ["ppu-ocv@4.0.0", "", { "dependencies": { "@napi-rs/canvas": "^1.0.0", "@techstark/opencv-js": "^5.0.0-release.1" }, "peerDependencies": { "@shopify/react-native-skia": ">=1.0.0" }, "optionalPeers": ["@shopify/react-native-skia"] }, "sha512-ol+S9/KLZ0aTV0xbC8+ZB0iM+FYux8ujoULeQoYY2IDBZj4LAuujJUkzHzUA2O3KzHs17KuuIzV/w4/htPdn3w=="],
 
-    "ppu-paddle-ocr": ["ppu-paddle-ocr@6.1.1", "", { "dependencies": { "ppu-ocv": "^4.0.0" }, "peerDependencies": { "@shopify/react-native-skia": ">=1.0.0", "onnxruntime-node": "^1.23.2", "onnxruntime-react-native": "^1.23.2", "onnxruntime-web": "^1.23.2" }, "optionalPeers": ["@shopify/react-native-skia", "onnxruntime-node", "onnxruntime-react-native", "onnxruntime-web"], "bin": { "ppu-paddle-ocr": "cli/index.js" } }, "sha512-OWTf6GyGVwJt4u8QrkS2IGssJ91n2hbs8beGWESSs4JWSYUIWT3aS/B3/y5hIqZu/6S7RURgkEy4kjoR6hZ+fg=="],
+    "ppu-paddle-ocr": ["ppu-paddle-ocr@6.2.0", "", { "dependencies": { "ppu-ocv": "^4.0.0" }, "peerDependencies": { "@shopify/react-native-skia": ">=1.0.0", "onnxruntime-node": "^1.23.2", "onnxruntime-react-native": "^1.23.2", "onnxruntime-web": "^1.23.2" }, "optionalPeers": ["@shopify/react-native-skia", "onnxruntime-node", "onnxruntime-react-native", "onnxruntime-web"], "bin": { "ppu-paddle-ocr": "cli/index.js" } }, "sha512-8YI6uI/IdhK5Jsi7Tb2job2k+Z5NgLdxh/4xkXVV5RJ+Qxeqq1FnThCRyigb9wy7baOzGKjrMAUBzAm+r2q5sw=="],
 
     "pretty-format": ["pretty-format@29.7.0", "", { "dependencies": { "@jest/schemas": "^29.6.3", "ansi-styles": "^5.0.0", "react-is": "^18.0.0" } }, "sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ=="],
 
